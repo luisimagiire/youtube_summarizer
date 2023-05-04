@@ -1,0 +1,3 @@
+OPENAI_API_KEY: ""
+cache_folder: ".tmp/"
+whisper_model: "tiny"  # tiny, base, small, medium, large
