@@ -1,6 +1,6 @@
 # YT Summarizer
 
-> No time to watch your favorite youtuber? No problem! Read the top 10 highlights in the video!
+> No time to watch your favorite youtuber? No problem! Get the top 10 highlights in the video!
 
 Youtube video summarizer using OpenAI's API, Whisper and Pytube.
 
@@ -16,7 +16,7 @@ Made by [@mewtzu](https://twitter.com/mewtzu)
 
 ## How to use it
 
-- Install the requirements
+- Install the requirements w/ [poetry](https://github.com/python-poetry/poetry)
 
 ```bash
 poetry install
@@ -49,6 +49,7 @@ python tldw.py transcribe "[VIDEO_URL]"
   whisper model in `config.yaml`.
 - The summarization is not perfect either. If things are not good enough, try picking a different temperature - or tweak
   the prompt at `yt_summarizer/base.py`.
+- This is just a demo made in 2 hours, fork it and make it better! :)
 
 -----------------
 Feel free to reach out [on Twitter](https://twitter.com/mewtzu) if you have any questions or feedback!
