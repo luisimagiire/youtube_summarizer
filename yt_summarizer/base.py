@@ -16,6 +16,7 @@ from pytube import YouTube
 
 colorama_init()
 
+# Coloring helper function
 _fc = lambda color, text: f"{color}{text}{Style.RESET_ALL}"
 
 
@@ -56,7 +57,6 @@ class YTSum:
     def __init__(self, config_path: Path = Path('config.yaml')):
         self.config = YTSumConfig.from_yaml(str(config_path))
         self.config.cache_folder.mkdir(exist_ok=True)
-
         self.file_path = None
         self.summary = None
         self.transcription = None
@@ -74,8 +74,7 @@ class YTSum:
         f_name = filename if filename is not None else yt.video_id
         f_path = (output_path / filename) if filename is not None else output_path / f"{f_name}.mp4"
         if f_path.exists():
-            print(
-                f"{_fc(Fore.LIGHTGREEN_EX, 'Found')} {_fc(Fore.LIGHTYELLOW_EX, f_path)}, {_fc(Fore.LIGHTGREEN_EX, 'skipping download')}...")
+            print(f"{_fc(Fore.LIGHTGREEN_EX, 'Found')} {_fc(Fore.LIGHTYELLOW_EX, f_path)}, {_fc(Fore.LIGHTGREEN_EX, 'skipping download')}...")
         else:
             print(f"Downloading audio from {url} to {output_path}/{f_name}.mp4")
             (yt.streams
@@ -89,7 +88,7 @@ class YTSum:
 
     def transcribe(self, audio_file: Path = None, use_cache: bool = True, verbose: bool = False):
         """
-        Summarize an audio file
+        Transcribe the audio file
         :param use_cache: Flag to use cache
         :param audio_file: Path to audio file
         :return:
@@ -121,6 +120,10 @@ class YTSum:
         return self
 
     def summarize(self):
+        """
+        Summarize the transcription
+        :return:
+        """
         llm = OpenAI(openai_api_key=self.config.OPENAI_API_KEY, temperature=0)
         prompt = PromptTemplate(
             input_variables=["summary"],
