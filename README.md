@@ -4,13 +4,14 @@
 
 Youtube video summarizer using OpenAI's API, Whisper and Pytube.
 
+
 ⚡ Lean implementation - call it with 5 lines of code!
 
-(IMAGE)
+![image](https://user-images.githubusercontent.com/29677585/236568275-21eb224d-b8a1-4837-af68-bdb3a6f2819f.png)
 
 or use it as a CLI tool
 
-(IMAGE)
+![image](https://user-images.githubusercontent.com/29677585/236568314-9eb8f1aa-bd35-4eb2-bece-0a2af56f1e1d.png)
 
 Made by [@mewtzu](https://twitter.com/mewtzu)
 
